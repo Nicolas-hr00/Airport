@@ -1,0 +1,147 @@
+#include <iostream>
+#include <map>
+#include <string>//hjhjhjhbnbnbnm
+using namespace std;
+
+class Hash
+ {
+ private:
+   static const int BUCKET = 5;
+   struct item
+    {
+      string name;
+      int grade;
+      item* next;
+    };
+ public:
+   item* table[BUCKET];
+   Hash();
+   void InsertItem(string name, int grade);
+   int HashFunction(string key);
+   void PrintInfo();
+   void DeleteItem(string name);
+
+ };
+ //==========================================================================================
+ Hash::Hash()
+  {
+    for (int i=0; i < BUCKET; i++)
+     {
+       table[i] = new item;
+       table[i] ->name ="None";
+       table[i] ->grade = 0;
+       table[i] -> next = NULL;
+     }
+
+  }
+  //==========================================================================================
+  int Hash::HashFunction(string key)
+   {
+     int hash=0;
+     int index=0;
+      for (int i=0; i < key.length(); i++)
+       {
+         hash = hash + (int)key[i];
+       }
+        return hash % BUCKET;
+   }
+
+  //==========================================================================================
+
+  void Hash::InsertItem(string name, int grade)
+   {
+     int index = HashFunction(name);
+
+        if (table[index] -> name == "None")
+         {
+           table[index] -> name = name;
+           table[index] -> grade = grade;
+         }
+      // else
+      //  {
+      //    item* ptr = table[index];
+      //    item* n = new item;
+      //
+      //    n -> name = name;
+      //    n -> grade = grade;
+      //    n -> next = NULL;
+      //
+      //    while(ptr != NULL)
+      //     {
+      //       ptr = ptr -> next;
+      //     }
+      //      ptr -> next = n;
+      //  }
+   }
+
+   //==========================================================================================
+   void Hash::PrintInfo()
+    {
+      int number;
+
+      for (int i=0; i< BUCKET; i++)
+      {
+          cout << "-----------------------" << endl;
+          cout << "Index " << i << endl;
+          cout << "Name: " << table[i]->name << endl;
+          cout << "Grade: " << table[i]-> grade << endl;
+          cout << "-----------------------" << endl;
+      }
+    }
+
+   //==========================================================================================
+   void Hash::DeleteItem(string name)
+    {
+      int index = HashFunction(name);
+      item* delptr;
+
+
+      if(table[index] ->name == "None" && table[index] -> grade == 0 )
+       {
+          cout << name << " was not found in the table" << endl;
+       }
+       else if(table[index] -> name == name && table[index] -> next == NULL)
+        {
+          table[index] -> name = "Empty";
+          table[index] -> grade = 0;
+
+          cout << name << "The values has been removed " << endl;
+        }
+       else if(table[index] -> name == name)
+        {
+           delptr = table[index];
+           table[index] = table[index] -> next;
+           delete delptr;
+           // name = delptr
+           // table[index] -> grade = grade;
+           cout << name << " has been deleted" << endl;
+        }
+    }
+
+   //==========================================================================================
+
+int main()
+ {
+   Hash hash;
+   string name;
+   hash.InsertItem("Nicolas", 98);
+   hash.InsertItem("Alejandro", 60);
+   hash.InsertItem("Andres", 80);
+   hash.InsertItem("Rodrigo", 40);
+
+
+  hash.PrintInfo();
+
+
+  while (name != "exit")
+   {
+   cout << "Enter the name you would like to remove: ";
+     cin >> name;
+     if(name != "exit")
+      {
+        hash.DeleteItem(name);
+      }
+       hash.PrintInfo();
+   }
+   return 0;
+ }
