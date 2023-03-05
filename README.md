@@ -1,5 +1,5 @@
 #we would have to access to the main first in order to compile it
-#Then, the way this is going to be compile it is going to be like: g++ main.cpp ../classes/*.cpp
+#Then, the way this is going to be compile it is going to be like: g++ main.cpp ../classes/*.cpp taking in count that the user is within file named "main"
 #The files are going to be write it in the main where passenger and reservation is.
 
 
