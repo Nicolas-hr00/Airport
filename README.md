@@ -1,5 +1,6 @@
 #we would have to access to the main first in order to compile it
-#Then, the way this is going to be compile it is going to be like: g++ main.cpp ../classes/*.cpp taking in count that the user is within file named "main"
+#Then, the way this is going to be compile it is going to be like: g++ main.cpp ../classes/*.cpp taking in count that the user is within file named "main". The file will be run as "./a.out", and the the following data from the csv files should be save on a "name_of_thefile".out
+#
 #The files are going to be write it in the main where passenger and reservation is.
 
 
@@ -10,4 +11,3 @@
 #as you can see in instructions the Example codes were written by me Nicolas.
 
 
-#nue..//....
