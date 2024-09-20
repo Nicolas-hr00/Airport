@@ -16,7 +16,7 @@
 ## Language 
   C++ 
 ## How to Run 
-  - compile the main.cpp and all the functions and classes stores within the classes folder
+  - compile the main.cpp and all the functions and classes stores within the classes folder <BR>
     ---g++ main.cpp ../classes/*.cpp
 
 
