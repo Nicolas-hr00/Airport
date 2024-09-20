@@ -4,20 +4,17 @@
 #Go the the file Input_out.txt to see a better illustration of all the data saved from the CSV files
 #The files are going to be write it in the main where passenger and reservation is.
 
-
-#For the final submission, none of my teammates actually said anything, I had to create the wiki all by myself and use #
-#what I had because none of them pushed anything important. The only person who really contact me and asked me for
-#help was ajay, this was because I wrote the main logic that it is being used for the project, so they could use it.
-#and I had useful example code. We were actually able to get quite a lot stuff done together.
-#as you can see in instructions the Example codes were written by me Nicolas.
-
 ## Airport Data Saver 
  The goal of this project was to build a program that reads data from a CSV file and organizes it into a new file based on its independent variable. I used hash tables as the main data structure and was able to successfully implement the solution. The program read the title of a CSV file, opens it up and grabs each one of the variables and stores it onto a txt file. It indexes on a format where it is easy to read.  
 ## Language 
   C++ 
 ## How to Run 
-  - compile the main.cpp and all the functions and classes stores within the classes folder <BR>
+  - compile the main.cpp and all the functions and classes stores within the classes folder, the user needs to be within the main folder <BR>
     - g++ main.cpp ../classes/*.cpp
+  - Once the program compiles, type the following to run the code
+    - "./a.out"
+  - You will be prompt to type the name of the file and a "name_of_the_file".out will be created it
+  - To have a better illustration of the data you can go to Input_out.txt and all the data should be saved.  
 
 
 
