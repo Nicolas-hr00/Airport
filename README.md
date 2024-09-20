@@ -11,4 +11,12 @@
 #and I had useful example code. We were actually able to get quite a lot stuff done together.
 #as you can see in instructions the Example codes were written by me Nicolas.
 
+## Airport Data Saver 
+ The goal of this project was to build a program that reads data from a CSV file and organizes it into a new file based on its independent variable. I used hash tables as the main data structure and was able to successfully implement the solution. The program read the title of a CSV file, opens it up and grabs each one of the variables and stores it onto a txt file. It indexes on a format where it is easy to read.  
+## Language 
+  C++ 
+## How to Run 
+  - g++ main.cpp ../classes/*.cpp
+
+
 
